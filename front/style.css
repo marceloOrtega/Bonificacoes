@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Montserrat, Arial, sans-serif;
+    color: #383C33;
+}
+body {
+    width: 100%;
+    background-color: #383C33;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+main {
+    width: 100%;
+    height: 84vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+table {
+    border: 1px solid #000;
+    background: #8CC63F;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+input{
+    border: 1px solid #000;
+    background-color: #383C33;
+    color: #fff;
+}
+header,
+footer {
+    text-align: center;
+    width: 100%;
+    height: 8vh;
+    background-color: #4D5246;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+form{
+    border: 1px solid #000;
+}
+h1,
+h2,
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    color: #fff;
+    text-align: center;
+}
+tr:nth-child(even) {
+
+    background: #383C33;
+}
+
+td {
+    color: #fff;
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+td[contenteditable="true"]{
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+th {
+    border: 1px solid #000;
+    background: #628D2A;
+    color: #fff;
+    padding: 10px;
+}
+
+label,
+input {
+    border: 1px solid #000;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+}
+button, input[type="submit"], input[type="reset"]{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: #fff;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+#novo {
+    position: relative;
+    width: 50vw;
+    background-color: #8CC63F;
+    box-shadow: 1px 1px 3px #628D2A;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.modal1 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 100px;
+}
+
+.oculto {
+    display: none;
+}
+
+/* responsva*/
+@media screen and (max-width: 600px) {
+
+    th {
+        display: none;
+    }
+
+    td[data-label] {
+        display: block;
+        text-align: right;
+    }
+
+    td[data-label]:before {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+    }
+
+    .modal1 {
+        padding: 0;
+    }
+
+    #novo {
+        width: 100vw;
+    }
+}
+:root {
+    --p1: #4D5246;
+    --p2: #628D2A;
+    --p3: #628D2A;
+    --p4: #8CC63F;
+    --p5: #383C33;
+}
+

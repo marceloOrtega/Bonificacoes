@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Desafio</title>
+</head>
+
+<body onload="carregar()">
+    <header>
+        <h1>Marcelo Bonificações</h1>
+        <button onclick="modal1.classList.remove('oculto')"> Cadastrar Novo Funcionário</button>
+        <div id="modal1" class="modal1 oculto">
+            <form id="novo">
+                <header style="grid-column-end: span 2;">
+                    <h1>Pagamento</h1>
+                </header>
+                <label for="nome">NOME:</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome do paciente" required>
+                <label for="admissao">DATA DE ADMISSÃO:</label>
+                <input type="date" name="admissao" id="admissao" required>
+                <label for="salario">SALÁRIO R$:</label>
+                <input type="number" name="salario" id="salario" min="0" value="0" required>
+                <label for="desempenho">NOTA DE DESEMPENHO:</label>
+                <input type="number" name="desempenho" id="desempenho" min="0" max="10" value="0" required>
+                <input type="reset" value="Cancelar" onclick="modal1.classList.add('oculto')">
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <th>Matricula</th>
+                <th>Nome Completo</th>
+                <th>Admissão</th>
+                <th>Salário</th>
+                <th>Pagamento</th>
+                <th>Desempenho</th>
+                <th>Bonificação</th>
+                <th>Atualizar</th>
+                <th>Excluir</th>
+            </thead>
+            <tbody id="corpo"></tbody>
+        </table>
+    </main>
+    <footer>
+        <h2 id="total">Total de Pagamentos:</h2>
+        <input type="text" name="filtro" id="filtro" placeholder="Filtro" onkeyup="filtro()">
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
